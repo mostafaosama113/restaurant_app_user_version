@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:restaurant_app/shared/colors.dart';
 import 'package:restaurant_app/shared/components/custom_icon_button.dart';
 import 'package:restaurant_app/shared/components/input_field.dart';
 import 'package:restaurant_app/shared/components/r_button.dart';

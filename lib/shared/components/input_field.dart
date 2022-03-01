@@ -37,8 +37,13 @@ class InputField extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.r),
           ),
           hintText: hint,
+          hintStyle: TextStyle(
+            fontSize: 16.sp,
+          ),
         ),
-        style: const TextStyle(),
+        style: TextStyle(
+          fontSize: 16.sp,
+        ),
         obscureText: isPass,
       ),
     );

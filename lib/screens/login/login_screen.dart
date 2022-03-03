@@ -64,20 +64,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: 20.h),
                     RButton(
                       title: 'Sign in',
-                      onClick: () {
-                        model
-                            .loginByEmail(
-                          email: usernameController.text,
-                          password: passwordController.text,
-                        )
-                            .then(
-                          (isLogin) {
-                            if (isLogin) {
-                              debugPrint('success');
-                            }
-                          },
-                        );
-                      },
+                      onClick: () => model
+                          .loginByEmail(
+                        email: usernameController,
+                        password: passwordController,
+                      )
+                          .then(
+                        (isLogin) {
+                          if (isLogin) {
+                            debugPrint('success');
+                          }
+                        },
+                      ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

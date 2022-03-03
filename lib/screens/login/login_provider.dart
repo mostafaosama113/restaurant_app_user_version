@@ -4,15 +4,16 @@ import 'package:flutter/cupertino.dart';
 class LoginProvider extends ChangeNotifier {
   bool isLoading = false;
   Future<bool> loginByEmail(
-      {required String email, required String password}) async {
+      {required TextEditingController email,
+      required TextEditingController password}) async {
     FocusManager.instance.primaryFocus?.unfocus();
     isLoading = true;
     notifyListeners();
     try {
       UserCredential userCredential =
           await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email,
-        password: password,
+        email: email.text,
+        password: password.text,
       );
       if (userCredential.user == null) {
         isLoading = false;

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/screens/login/login_provider.dart';
-import 'package:restaurant_app/shared/components/custom_icon_button.dart';
-import 'package:restaurant_app/shared/components/input_field.dart';
-import 'package:restaurant_app/shared/components/progress_widget.dart';
-import 'package:restaurant_app/shared/components/r_button.dart';
+import 'package:restaurant_app/widgets/custom_icon_button.dart';
+import 'package:restaurant_app/widgets/progress_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:restaurant_app/shared/components/separator.dart';
+import 'package:restaurant_app/widgets/separator.dart';
+
+import '../../widgets/input_field.dart';
+import '../../widgets/r_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

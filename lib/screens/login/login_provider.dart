@@ -1,9 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/shared/colors.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../shared/components/show_error.dart';
 
 class LoginProvider extends ChangeNotifier {
   bool isLoading = false;
@@ -40,23 +39,4 @@ class LoginProvider extends ChangeNotifier {
       return false;
     }
   }
-}
-
-void showError(context, message) {
-  Alert(
-    context: context,
-    type: AlertType.error,
-    desc: message,
-    buttons: [
-      DialogButton(
-        color: btnColor,
-        child: Text(
-          "Try again",
-          style: TextStyle(color: Colors.white, fontSize: 18.sp),
-        ),
-        onPressed: () => Navigator.pop(context),
-        width: 120.w,
-      )
-    ],
-  ).show();
 }

@@ -12,6 +12,7 @@ void showError(context, message) {
     style: AlertStyle(
       alertElevation: 0,
       overlayColor: Colors.black.withOpacity(.40),
+      descStyle: TextStyle(fontSize: 12.sp),
       alertBorder: const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.white),
       ),
@@ -19,11 +20,12 @@ void showError(context, message) {
     buttons: [
       DialogButton(
         color: btnColor,
+        height: 35.h,
         child: Text(
           "Try again",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18.sp,
+            fontSize: 14.sp,
           ),
         ),
         onPressed: () => Navigator.pop(context),

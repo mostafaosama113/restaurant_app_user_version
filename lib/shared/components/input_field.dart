@@ -21,6 +21,7 @@ class InputField extends StatelessWidget {
       child: TextField(
         keyboardType: keyboardType,
         cursorColor: Colors.black,
+        controller: controller,
         decoration: InputDecoration(
           fillColor: Colors.white,
           contentPadding: EdgeInsets.symmetric(

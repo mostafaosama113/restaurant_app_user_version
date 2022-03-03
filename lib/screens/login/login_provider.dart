@@ -25,11 +25,11 @@ class LoginProvider extends ChangeNotifier {
       if (userCredential.user == null) {
         isLoading = false;
         notifyListeners();
+        showError(context, 'Error');
         return false;
       } else {
         isLoading = false;
         notifyListeners();
-        showError(context, 'Error');
         return true;
       }
     } on FirebaseAuthException catch (e) {

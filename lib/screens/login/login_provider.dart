@@ -6,6 +6,7 @@ class LoginProvider extends ChangeNotifier {
   Future<bool> loginByEmail(
       {required TextEditingController email,
       required TextEditingController password}) async {
+    print('email : ${email.text}');
     FocusManager.instance.primaryFocus?.unfocus();
     isLoading = true;
     notifyListeners();
@@ -27,11 +28,12 @@ class LoginProvider extends ChangeNotifier {
     } on FirebaseAuthException catch (e) {
       isLoading = false;
       notifyListeners();
-      if (e.code == 'user-not-found') {
-        debugPrint('No user found for that email.');
-      } else if (e.code == 'wrong-password') {
-        debugPrint('Wrong password.');
-      }
+      debugPrint(e.code.replaceAll('-', ' '));
+      // if (e.code == 'user-not-found') {
+      //   debugPrint('No user found for that email.');
+      // } else if (e.code == 'wrong-password') {
+      //   debugPrint('Wrong password.');
+      // }
 
       return false;
     }

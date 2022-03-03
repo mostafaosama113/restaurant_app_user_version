@@ -66,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       title: 'Sign in',
                       onClick: () => model
                           .loginByEmail(
+                        context,
                         email: usernameController,
                         password: passwordController,
                       )

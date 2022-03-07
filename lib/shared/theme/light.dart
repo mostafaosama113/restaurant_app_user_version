@@ -5,7 +5,9 @@ import 'package:restaurant_app/shared/colors.dart';
 ThemeData lightTheme() {
   return ThemeData(
     scaffoldBackgroundColor: backgroundColor,
+    drawerTheme: const DrawerThemeData(backgroundColor: backgroundColor),
     appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(color: Colors.black),
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: backgroundColor,
         statusBarIconBrightness: Brightness.dark,

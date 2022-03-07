@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:restaurant_app/screens/home/home_screen.dart';
 import 'package:restaurant_app/screens/login/login_provider.dart';
+import 'package:restaurant_app/shared/slide_to_right.dart';
 import 'package:restaurant_app/widgets/custom_icon_button.dart';
 import 'package:restaurant_app/widgets/progress_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -74,7 +76,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           .then(
                         (isLogin) {
                           if (isLogin) {
-                            debugPrint('success');
+                            debugPrint('login');
+                            Navigator.pushReplacement(
+                              context,
+                              SlideRight(
+                                screen: HomeScreen(),
+                              ),
+                            );
                           }
                         },
                       ),

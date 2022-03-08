@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.pushReplacement(
                               context,
                               SlideRight(
-                                screen: HomeScreen(),
+                                screen: const HomeScreen(),
                               ),
                             );
                           }

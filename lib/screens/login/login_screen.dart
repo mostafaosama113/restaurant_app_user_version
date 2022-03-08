@@ -77,7 +77,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           .then(
                         (isLogin) {
                           if (isLogin) {
-                            debugPrint('login');
                             Navigator.pushReplacement(
                               context,
                               SlideRight(

@@ -63,13 +63,13 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Image.asset(
             'assets/images/logo.png',
-            height: 400.h,
+            height: 300.h,
           ),
           SizedBox(height: 40.h),
           Expanded(
             child: AnimatedContainer(
               curve: Curves.easeInOut,
-              duration: const Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 800),
               alignment: Alignment(0, h),
               child: Text(
                 'Restaurant',

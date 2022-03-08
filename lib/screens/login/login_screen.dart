@@ -68,23 +68,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: 20.h),
                     RButton(
                       title: 'Sign in',
-                      onClick: () => model
-                          .loginByEmail(
+                      onClick: () => model.loginByEmail(
                         context,
                         email: usernameController,
                         password: passwordController,
-                      )
-                          .then(
-                        (isLogin) {
-                          if (isLogin) {
-                            Navigator.pushReplacement(
-                              context,
-                              SlideRight(
-                                screen: HomeScreen(),
-                              ),
-                            );
-                          }
-                        },
                       ),
                     ),
                     Row(
@@ -97,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Padding(
                           padding: EdgeInsets.all(8.w),
                           child: Text(
-                            'Or containue with',
+                            'Or continue with',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 12.sp),
                           ),

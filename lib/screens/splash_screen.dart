@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
           context,
           SlideRight(
-            screen: const HomeScreen(),
+            screen: HomeScreen(),
           ),
         );
       }

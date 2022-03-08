@@ -17,7 +17,16 @@ class HomeScreen extends StatelessWidget {
             Scaffold(
               appBar: AppBar(),
               drawer: Drawer(
-                child: Column(),
+                child: SafeArea(
+                  child: Column(
+                    children: [
+                      TextButton(
+                        onPressed: () => model.signOut(context),
+                        child: const Text('Sign out'),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
             if (model.isLoading) progressWidget(context),

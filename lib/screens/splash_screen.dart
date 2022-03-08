@@ -2,11 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:restaurant_app/screens/home/home_screen.dart';
-import 'package:restaurant_app/screens/login/login_screen.dart';
 import 'package:restaurant_app/shared/colors.dart';
-import 'package:restaurant_app/shared/slide_to_right.dart';
+import '../shared/slide_to_right.dart';
+import 'home/home_screen.dart';
+import 'login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -21,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(milliseconds: 500),
+      const Duration(seconds: 1),
       () {
         setState(
           () {
@@ -30,24 +29,24 @@ class _SplashScreenState extends State<SplashScreen> {
         );
       },
     );
-    // Future.delayed(const Duration(seconds: 3), () {
-    //   final User? user = FirebaseAuth.instance.currentUser;
-    //   if (user == null) {
-    //     Navigator.pushReplacement(
-    //       context,
-    //       SlideRight(
-    //         screen: const LoginScreen(),
-    //       ),
-    //     );
-    //   } else {
-    //     Navigator.pushReplacement(
-    //       context,
-    //       SlideRight(
-    //         screen: const HomeScreen(),
-    //       ),
-    //     );
-    //   }
-    // });
+    Future.delayed(const Duration(seconds: 3), () {
+      final User? user = FirebaseAuth.instance.currentUser;
+      if (user == null) {
+        Navigator.pushReplacement(
+          context,
+          SlideRight(
+            screen: const LoginScreen(),
+          ),
+        );
+      } else {
+        Navigator.pushReplacement(
+          context,
+          SlideRight(
+            screen: const HomeScreen(),
+          ),
+        );
+      }
+    });
   }
 
   @override
@@ -74,10 +73,10 @@ class _SplashScreenState extends State<SplashScreen> {
               alignment: Alignment(0, h),
               child: Text(
                 'Restaurant',
-                style: GoogleFonts.lobster(
-                  fontSize: 50.sp,
-                  color: Colors.white,
-                ),
+                style: TextStyle(
+                    fontFamily: 'Lobster',
+                    fontSize: 50.sp,
+                    color: Colors.white),
               ),
             ),
           )
